@@ -38,7 +38,7 @@ $.ajax({
 
     gifDiv.append(personImage);
  
-    $("#image-here").prepend(gifDiv);
+    $("#image-here").appendTo(gifDiv);
         }
     }
 });
