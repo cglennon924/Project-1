@@ -1,20 +1,45 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
 
 
 h1{
 text-align: center;
-font-size: 80%;
+font-size: 100px;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-#button{
+.container{
+    text-align: center;
+    display: inline-block;
+}
+
+
+
+
+
+#searchbar{
     position: relative;
+    width: 200px;
+    height: 79px;
+    color: black;
+    background-color: lightsalmon;
+    
+
 }
 
 body{
-    background-image:("https://files.slack.com/files-pri/T011LHFNDU2-F014EPHAZC0/imgp1.png");
+    background-image:url("https://files.slack.com/files-pri/T011LHFNDU2-F014EPHAZC0/imgp1.png");
+    background-size: cover;
+
+
+}
+
+#box{
+    object-position: center;
+    box-sizing: content-box;
+    background-position: center;
+    width: 357px;
+    margin-right: auto;
+    margin-left: auto;
+    float: left;
+    height: 75px;
+    background-color: ghostwhite;
 }
