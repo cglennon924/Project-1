@@ -3,11 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https:cdnj.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Incidunt eligendi dicta at corporis sunt exercitationem id odio eum qui, molestiae similique dolores omnis nulla vitae totam. Animi iure atque et!
+    <input id="title">by<input id="artist">
+    <button onclick="findlyrics"> find lyrics</button>
+    <div id="output"></div>
+<script>
+    function findlyrics(){
 
-    https://www.jsdelivr.com/package/npm/bulma
+        $.get("https://api.lyrics.ovh/v1/"
+        +document.getElementById$("#artist").value+"/"
+        +document.getElementById$("#title").value,
+        function(data){
+            document.getElementById("output").innerHTML=data.lyrics.replace(new RegExp("\n","g"),"<br>")
+        })
+    }
+       
+</script>
+
+   
 </body>
 </html>
