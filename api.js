@@ -6,6 +6,35 @@
 //----------Wikipedia-----------
 
 $(function() {
+    $("#search-musician").on("keycode", function(e){
+        if (e.keycode===13){
+            $("#submit").on("click", function(){
+
+                $( "#clear" ).click(function() {
+                    $( "#output" ).empty();
+                  });
+            
+                var searchTerm = $("textarea").val();
+                var queryURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchTerm +"&format=json&callback=?";
+        
+                $.ajax({
+                    url: queryURL,
+                    method: "GET",
+                    contentType: "application/json; charset=utf-8",
+                    async: false,
+                    dataType: "json",
+                    success: function(data, status, jqXHR) {
+                        $("#output").html();
+                        for(var i=0; i < data[1].length-1; i++) {
+                            $("#output").append("<div><div class='btn-primary'><a href=" +data[3][i]+ "><h2>" +data[1][i]+ "</h2>" + "<p>" + data[2][i] + "</p></a></div></div>");
+                        console.log(data);
+                        }
+                    }
+                })
+
+            });
+        }
+    });
 
     $("#submit").on("click", function(){
 
