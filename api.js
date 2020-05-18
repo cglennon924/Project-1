@@ -11,7 +11,8 @@ $(function() {
 
         $( "#clear" ).click(function() {
             $( "#output" ).empty();
-          });
+            
+        });
     
         var searchTerm = $("textarea").val();
         var queryURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchTerm +"&format=json&callback=?";
