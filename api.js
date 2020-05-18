@@ -40,7 +40,8 @@ $(function() {
 
         $( "#clear" ).click(function() {
             $( "#output" ).empty();
-          });
+            
+        });
     
         var artist = $("textarea").val();
         var queryURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ artist +"&format=json&callback=?";

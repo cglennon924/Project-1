@@ -1,13 +1,9 @@
-
-
 h1{
-text-align: center;
-font-size: 100px;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.container{
     text-align: center;
+    font-size: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+.container{
     display: inline-block;
     margin: 0;
 }
@@ -28,25 +24,45 @@ font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-right: -50%;
     transform: translate(-50%, -50%)
     
-
-}
-
-body{
-    background-image:url("https://files.slack.com/files-pri/T011LHFNDU2-F014EPHAZC0/imgp1.png");
-    background-size: cover;
-
-
-}
-
-#search-musician{
-    object-position: center;
-    box-sizing: content-box;
-    background-position: center;
-    width: 357px;
-    margin-right: auto;
-    margin-left: auto;
-    float: right;
-    height: 75px;
-    background-color: ghostwhite;
+  
     
-}
+    
+    
+    
+    
+    #submit{
+        border-width: medium;
+        color: black;
+        background-color: lightsalmon;
+        height: 25px;
+        flex-direction: row;
+        background-position: center;
+    }
+    
+    body{
+        background-image:url("https://files.slack.com/files-pri/T011LHFNDU2-F014EPHAZC0/imgp1.png");
+        background-size: cover;
+    
+    
+    }
+
+    .description{
+        font-family: 'Squada One', cursive;
+        font-size: x-large;
+    }
+    
+    #text-area{
+        height: 25px;
+        background-position: center;
+      
+        background-color: ghostwhite;
+        
+    }
+
+    #clear{
+        height: 25px;
+        border-width: medium;
+    }
+
+
+
