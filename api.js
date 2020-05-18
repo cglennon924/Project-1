@@ -1,18 +1,58 @@
-//$(document).ready(function(){
 
-    var title = "post-malone"
-    //var queryURL = "https:wikimedia.org/api/rest_v1" + "/metrics/pageviews/{endpoint}/{parameter 1}/{parameter 2}/.../{parameter N}";
-    var queryURL ="https://wikimedia.org/api/rest_v1/feed/availability";
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function(response) {e
-        console.log(response)
+
+
+
+//----------Wikipedia-----------
+
+$(function() {
+
+    $("#submit").on("click", function(){
+
+        $( "#clear" ).click(function() {
+            $( "#output" ).empty();
+          });
+    
+        var searchTerm = $("textarea").val();
+        var queryURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchTerm +"&format=json&callback=?";
+
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            dataType: "json",
+            success: function(data, status, jqXHR) {
+                $("#output").html();
+                for(var i=0; i < data[1].length-1; i++) {
+                    $("#output").append("<div><div class='btn-primary'><a href=" +data[3][i]+ "><h2>" +data[1][i]+ "</h2>" + "<p>" + data[2][i] + "</p></a></div></div>");
+                console.log(data);
+                }
+            }
+        })
+        .done(function() {
+            console.log("success");
+        })
+        .fail(function() {
+            console.log("error");
+        })
+        .always(function() {
+            console.log("complete");
+        });
+    });
 });
+    
+    
 
-//function displayInfo() {
-$("input").on("click", function() {
+
+
+
+
+//---------Giphy----------
+
+function displayInfo() {
+$("submit").on("click", function() {
+    
 
 var person = $(this).attr("#search-musician");
 
@@ -23,7 +63,7 @@ $.ajax({
     method: "GET"
   }).then(function(response) {
     console.log(response);
-    $("#image-here").text(JSON.stringify(response));
+    $("p").text(JSON.stringify(response));
 
     var results = response.data;
 
@@ -38,25 +78,14 @@ $.ajax({
 
     gifDiv.append(personImage);
  
-    $("#image-here").appendTo(gifDiv);
+    $("p").appendTo(gifDiv);
         }
     }
 });
 });
 
-$("submit").on("click", function(event) {
-    event.preventDefault();
 
-    var submit= $("#submit").val().trim();
-    submit.push("");
-    console.log(data);
-
-});
-console.log()
-
-
-
-//}
+}
 
 
 
