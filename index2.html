@@ -14,17 +14,19 @@
     <input id="title">by<input id="artist">
     <button onclick="findlyrics"> find lyrics</button>
     <div id="output"></div>
+
 <script>
     function findlyrics(){
+        var artist = $("#artist").value
+        var song = $("#title").value
+        $.get("https://api.lyrics.ovh/v1/",
 
-        $.get("https://api.lyrics.ovh/v1/"
-        +document.getElementById$("#artist").value+"/"
-        +document.getElementById$("#title").value,
         function(data){
-            document.getElementById("output").innerHTML=data.lyrics
+           $("output").innerHTML=data.lyrics
         })
     }
-       
+    
+    
 </script>
 
    

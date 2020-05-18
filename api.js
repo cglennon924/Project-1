@@ -1,68 +1,95 @@
-//$(document).ready(function(){
 
-var title = "post-malone"
-//var queryURL = "https:wikimedia.org/api/rest_v1" + "/metrics/pageviews/{endpoint}/{parameter 1}/{parameter 2}/.../{parameter N}";
-var queryURL = "https://wikimedia.org/api/rest_v1/feed/availability";
 
-$.ajax({
-    url: queryURL,
-    method: "GET"
-}).then(function (response) {
-    
-    console.log(response)
-});
 
-//function displayInfo() {
-$("input").on("click", function () {
 
-    var person = $(this).attr("#search-musician");
 
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=LQF6WEjUOrbemyHpMNLZA3bw8L7O4UYF";
+//----------Wikipedia-----------
 
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response);
-        $("#image-here").text(JSON.stringify(response));
+$(function () {
 
-        var results = response.data;
+    $("#submit").on("click", function () {
 
-        for (var i = 0; i < results.length; i++) {
-            if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+        $("#clear").click(function () {
+            $("#output").empty();
+        });
 
-                var gifDiv = $("<div>");
+        var searchTerm = $("textarea").val();
+        var queryURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchTerm + "&format=json&callback=?";
 
-                var personImage = $("<img>");
-
-                personImage.attr("src", results[i].images.fixed_height.url);
-
-                gifDiv.append(personImage);
-
-                $("#image-here").appendTo(gifDiv);
+        $.ajax({
+            url: queryURL,
+            method: "GET",
+            contentType: "application/json; charset=utf-8",
+            async: false,
+            dataType: "json",
+            success: function (data, status, jqXHR) {
+                $("#output").html();
+                for (var i = 0; i < data[1].length - 1; i++) {
+                    $("#output").append("<div><div class='btn-primary'><a href=" + data[3][i] + "><h2>" + data[1][i] + "</h2>" + "<p>" + data[2][i] + "</p></a></div></div>");
+                    console.log(data);
+                }
             }
-        }
+        })
+            .done(function () {
+                console.log("success");
+            })
+            .fail(function () {
+                console.log("error");
+            })
+            .always(function () {
+                console.log("complete");
+            });
     });
 });
 
-$("submit").on("click", function (event) {
-    event.preventDefault();
-
-    var submit = $("#submit").val().trim();
-    submit.push("");
-    console.log(data);
-
-});
-console.log()
-
-
-
-//}
 
 
 
 
 
+
+// ---------Giphy----------
+
+// function displayInfo() {
+//     $("submit").on("click", function () {
+
+
+//         var person = $(this).attr("#search-musician");
+
+//         var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + person + "&api_key=LQF6WEjUOrbemyHpMNLZA3bw8L7O4UYF";
+
+//         $.ajax({
+//             url: queryURL,
+//             method: "GET"
+//         }).then(function (response) {
+//             console.log(response);
+//             $("p").text(JSON.stringify(response));
+
+//             var results = response.data;
+
+//             for (var i = 0; i < results.length; i++) {
+//                 if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+
+//                     var gifDiv = $("<div>");
+
+//                     var personImage = $("<img>");
+
+//                     personImage.attr("src", results[i].images.fixed_height.url);
+
+//                     gifDiv.append(personImage);
+
+//                     $("p").appendTo(gifDiv);
+//                 }
+//             };
+//         });
+
+
+//     })
+
+
+
+
+// }
 //var APIkey = "9878e4e3e1c98453316ef422d8148877";
 //var queryURL2 = "https://api.musixmatch.com/ws/1.1/artist.albums.get?format=jsonp&callback=callback&artist_id=john_lennon&apikey=" + APIkey;
 
