@@ -5,9 +5,7 @@
 
 //----------Wikipedia-----------
 
-<<<<<<< HEAD
-$(function () {
-=======
+
 $(function() {
     $("#search-musician").on("keycode", function(e){
         if (e.keycode===13){
@@ -38,7 +36,7 @@ $(function() {
             });
         }
     });
->>>>>>> f4a109c4ed954c7c0db1410a1eac272bdb062272
+
 
     $("#submit").on("click", function () {
 
@@ -46,18 +44,10 @@ $(function() {
             $("#output").empty();
         });
 
-<<<<<<< HEAD
+
         var searchTerm = $("textarea").val();
         var queryURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search=" + searchTerm + "&format=json&callback=?";
-=======
-        $( "#clear" ).click(function() {
-            $( "#output" ).empty();
-            
-        });
-    
-        var artist = $("textarea").val();
-        var queryURL = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ artist +"&format=json&callback=?";
->>>>>>> f4a109c4ed954c7c0db1410a1eac272bdb062272
+
 
         $.ajax({
             url: queryURL,
