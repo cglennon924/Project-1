@@ -38,11 +38,13 @@ h1{
         font-size: x-large;
     }
     
-    #text-area{
-        height: 25px;
+    #input{
+        width: 300px;
+        height: 100px;
+        padding: 50px;
         background-position: center;
-      
         background-color: ghostwhite;
+
         
     }
 
