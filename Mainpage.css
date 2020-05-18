@@ -9,17 +9,6 @@ h1{
 }
 
 
-
-
-
-
-    
-  
-    
-    
-    
-    
-    
 #submit{
         border-width: medium;
         color: black;
@@ -29,19 +18,19 @@ h1{
         background-position: center;
     }
     
-    body{
+body{
         background-image:url("https://files.slack.com/files-pri/T011LHFNDU2-F014EPHAZC0/imgp1.png");
         background-size: cover;
     
     
     }
 
-    .description{
+.description{
         font-family: 'Squada One', cursive;
         font-size: x-large;
     }
     
-    #input{
+#input{
         width: 300px;
         height: 100px;
         padding: 50px;
@@ -51,7 +40,7 @@ h1{
         
     }
 
-    #clear{
+#clear{
         height: 25px;
         border-width: medium;
     }
