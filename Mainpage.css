@@ -7,30 +7,9 @@ h1{
     display: inline-block;
     margin: 0;
 }
-
-
-
-
-
+     
+    
 #submit{
-    position: absolute;
-    width: 200px;
-    height: 79px;
-    color: black;
-    background-color: lightsalmon;
-    margin: 0;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-    
-  
-    
-    
-    
-    
-    
-    #submit{
         border-width: medium;
         color: black;
         background-color: lightsalmon;
@@ -39,19 +18,19 @@ h1{
         background-position: center;
     }
     
-    body{
+body{
         background-image:url("https://files.slack.com/files-pri/T011LHFNDU2-F014EPHAZC0/imgp1.png");
         background-size: cover;
     
     
     }
 
-    .description{
+.description{
         font-family: 'Squada One', cursive;
         font-size: x-large;
     }
     
-    #input{
+#input{
         width: 300px;
         height: 100px;
         padding: 50px;
@@ -61,7 +40,7 @@ h1{
         
     }
 
-    #clear{
+#clear{
         height: 25px;
         border-width: medium;
     }
