@@ -33,7 +33,11 @@ function queryMusixMatch() {
       nextResponse = JSON.parse(nextResponse);
       var lyrics = nextResponse.message.body.lyrics.lyrics_body;
       var lyricsWithBreaks = lyrics.split("\n").join("<br>");
-      $("#mm-results").html(lyricsWithBreaks);
+      if (lyrics !== "") {
+        $("#mm-results").html(lyricsWithBreaks);
+      } else {
+        $("#mm-results").html("No lyrics found.");
+      }
     });
   });
 }
