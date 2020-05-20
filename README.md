@@ -1,5 +1,7 @@
 # Project-1
 
+https://cglennon924.github.io/Project-1/
+
 In this project we were required to come up with a site that uses two different API's (application program interface), a different styling format besides Bootstrap, and mash them together. We decided to use Wikipedia, MusixMatch, and Bulma. With these API's, we came up with a site called Lyrics +! 
 
 Lyrics + allows the user to type in their favorite songs and search for more information about them; such as Wikipedia links and lyrics through MusixMatch. One would be surprised at what they can learn about their selected song. 
