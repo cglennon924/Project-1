@@ -7,3 +7,6 @@ Lyrics + allows the user to type in their favorite songs and search for more inf
 Once the user presses the submit button on the first HTML page, that information is processed in our result.js file sorting out what should be displayed onto the index2.html page. This whole page is formatted through our CSS page and Bulma framework. The Wikipedia links are displayed nicely on the left side of the screen, while the MusixMatch is displayed onto the right side of the screen.
 
 We hope you enjoy your experience at Lyrics +!
+
+#*First Page: displays search bar.* ![First Page](./asset/images/readMe1.png)
+#*Second Page: displays search terms.* ![Second Page](./asset/images/readMe2.png)
