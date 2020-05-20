@@ -54,7 +54,7 @@ function queryWikipedia() {
     dataType: "json",
     success: function (data, status, jqXHR) {
       $("#wp-results").html();
-      for (var i = 0; i < data[1].length - 7; i++) {
+      for (var i = 0; i < data[1].length - 8; i++) {
         $("#wp-results").append("<div><div class='btn-primary'><a href=" + data[1][i] + "><h2>" + data[1][i] + "</h2>" + "<p>" + data[2][i] + "</p></a></div></div>");
         console.log(data);
       }
