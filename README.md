@@ -1,4 +1,4 @@
-# Project-1
+# Lyrics+
 
 https://cglennon924.github.io/Project-1/
 
